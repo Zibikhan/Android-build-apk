@@ -18,7 +18,7 @@ jobs:
         run: |
           unzip -q AndroidStreamControl.zip
           cd AndroidStreamControl
-          echo "org.gradle.jvmargs=-Xmx3g" > gradle.properties
+          printf "org.gradle.jvmargs=-Xmx3g\nandroid.useAndroidX=true\n" > gradle.properties
           gradle assembleDebug --no-daemon
       - name: Publish APK
         env:
